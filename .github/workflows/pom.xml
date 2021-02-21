@@ -1,0 +1,5 @@
+<properties>
+  <sonar.projectKey>thisisnotworthmytime</sonar.projectKey>
+  <sonar.organization>fuckingendme</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
