@@ -121,6 +121,9 @@
         <guava-retry.version>2.0.0</guava-retry.version>
         <dep.airlift.version>0.184</dep.airlift.version>
         <dep.packaging.version>${dep.airlift.version}</dep.packaging.version>
+		<sonar.projectKey>thisisnotworthmytime</sonar.projectKey>
+		<sonar.organization>fuckingendme</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencyManagement>
