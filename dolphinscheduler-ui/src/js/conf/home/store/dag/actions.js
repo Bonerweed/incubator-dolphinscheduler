@@ -469,13 +469,13 @@ export default {
   getProcessInstance ({ state }, payload) {
     return new Promise((resolve, reject) => {
       io.get(`projects/${state.projectName}/instance/list-paging`, payload, res => {
-        state.instanceListS = res.data.totalList.filter((value, index, self) => {return self.indexOf(value) === self})
+        state.instanceListS = res.data.totalList.filter( ( value, index, self ) => { return self.indexOf(value) === self } )
         resolve(res.data)
       }).catch(res => {
         reject(res)
       })
     })
-  }, //HERE 1
+  },
   /**
    * Get alarm list
    */
@@ -735,7 +735,6 @@ export default {
       })
     })
   },
-  //HERE 2
   /**
    * Force fail/kill/need_fault_tolerance task success
    */
