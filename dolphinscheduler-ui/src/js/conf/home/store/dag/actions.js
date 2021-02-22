@@ -469,7 +469,7 @@ export default {
   getProcessInstance ({ state }, payload) {
     return new Promise((resolve, reject) => {
       io.get(`projects/${state.projectName}/instance/list-paging`, payload, res => {
-        state.instanceListS = res.data.totalList.filter( ( value, index, self ) => { return self.indexOf(value) === self } )
+        state.instanceListS = res.data.totalList.filter((value, index, self) => { return self.indexOf(value) === self })
         resolve(res.data)
       }).catch(res => {
         reject(res)
