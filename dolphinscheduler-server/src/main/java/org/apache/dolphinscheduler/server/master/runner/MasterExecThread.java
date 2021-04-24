@@ -732,12 +732,12 @@ public class MasterExecThread implements Runnable {
         }
 
         List<TaskInstance> pauseList = getCompleteTaskByState(ExecutionStatus.PAUSE);
-        if (CollectionUtils.isNotEmpty(pauseList)
-                || !isComplementEnd()
-                || readyToSubmitTaskQueue.size() > 0) {
-            return ExecutionStatus.PAUSE;
-        } else {
+        if (!CollectionUtils.isNotEmpty(pauseList)
+                || isComplementEnd()
+                || !(readyToSubmitTaskQueue.size() > 0)) {
             return ExecutionStatus.SUCCESS;
+        } else {
+            return ExecutionStatus.PAUSE;
         }
     }
 
@@ -766,7 +766,7 @@ public class MasterExecThread implements Runnable {
 
         // pause
         if (state == ExecutionStatus.READY_PAUSE) {
-            return processReadyPause();
+            return (processReadyPause() == ExecutionStatus.SUCCESS ? ExecutionStatus.SUCCESS : ExecutionStatus.FAILURE);
         }
 
         // stop
