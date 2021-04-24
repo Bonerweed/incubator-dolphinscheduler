@@ -122,6 +122,7 @@
         <dep.airlift.version>0.184</dep.airlift.version>
         <dep.packaging.version>${dep.airlift.version}</dep.packaging.version>
 		<sonar.projectKey>thisisnotworthmytime</sonar.projectKey>
+		<sonar.moduleKey>${artifactId}</sonar.moduleKey>
 		<sonar.organization>fuckingendme</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
